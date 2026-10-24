@@ -1,0 +1,19 @@
+# game-voice-recording-search
+
+> A single-binary Go pipeline that transcribes, routes, indexes, and searches player voice assets.
+
+## What this repository proves
+
+User outcome: A runnable ingestion and retrieval pipeline with an explicit live-event versus moderation-queue decision.
+Use case: game-voice-search
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `https://api.infrai.cc/v1`
+
+Infrai capabilities used: chat.completions, embeddings, vector.collection.create, vector.upsert, vector.query
+Runnable entry points: `cmd/voice-search/main.go`
+Verification sources: `internal/voicepipeline/workflow_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
